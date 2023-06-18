@@ -1,12 +1,32 @@
 @import url("photographer.css");
 
+:focus {
+    /* outline-offset: 1px;
+    outline-color: #901C1C; */
+    border-radius: 5px;
+}
+
 body {
+    position: relative;
     font-family: "DM Sans", sans-serif;
     margin: 0;
 }
 
+textarea {
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+}
 
-header {
+a {
+    text-decoration: none;
+}
+
+/* a:focus-visible {
+    outline-offset: 1px;
+    outline-color: #901C1C;
+} */
+
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -21,30 +41,60 @@ h1 {
 
 .logo {
     height: 50px;
+}
+
+.logo-link {
     margin-left: 100px;
 }
 
-.photographer_section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
-    margin-top: 100px;
+.photographer-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 80px;
 }
 
-.photographer_section article {
-    justify-self: center;
+.photographe-article {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    text-align: center;
+    width: 27%;
+    margin: 0 0.5rem 4rem 0.5rem;
 }
 
-.photographer_section article h2 {
-    color: #D3573C;
-    font-size: 36px;
+.photographe-article-link {
+    text-decoration: none;
 }
 
-.photographer_section article img {
+.photographe-article-img {
     height: 200px;
     width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.photographe-article-name {
+    color: #D3573C;
+    font-size: 33px;
+    margin-bottom: 0rem;
+}
+
+.photographe-article-infos {
+    margin: 0;
+}
+
+.photographe-article-city {
+    color: #901C1C;
+    font-size: 16px;
+}
+
+.photographe-article-tagline {
+    font-size: 15px;
+}
+
+.photographe-article-price {
+    color: #717171;
+    font-size: 14px;
 }

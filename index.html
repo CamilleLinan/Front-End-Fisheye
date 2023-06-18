@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/427a8b27ad.js" crossorigin="anonymous"></script>
+    
     <title>Fisheye</title>
   </head>
+  
   <body>
-    <header>
-        <img src="assets/images/logo.png" class="logo" />
-        <h1>Nos photographes</h1>
+    <header class="header">
+      <a href="index.html" title="Accueil" aria-label="FishEye Home Page" class="logo-link">
+        <img src="assets/images/logo.png" alt="Fisheye Home Page" class="logo">
+      </a>
+        <h1 aria-label="Nos photographes" tabindex="0">Nos photographes</h1>
     </header>
+
     <main id="main">
-        <div class="photographer_section"></div>
+        <div class="photographer-section"></div>
     </main>
-    <script src="scripts/factories/photographer.js"></script>
+
+    <script src="scripts/factories/photographerFactory.js"></script>
     <script src="scripts/pages/index.js"></script>
   </body>
 </html>

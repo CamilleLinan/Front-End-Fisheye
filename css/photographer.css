@@ -1,14 +1,25 @@
-#contact_modal {
-    display: none;
-}
-
+/* HEADER PHOTOGRAPHE PAGE */
 .photograph-header {
     background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 100px;
+    margin: 1rem 100px;
 }
 
-.contact_button {
+.photograph-header-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.photograph-header-details-name {
+    margin: inherit;
+}
+
+.photograph-header .photograph-header-details-city {
+    margin: 1rem 0;
+}
+
+.contact-button {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -19,33 +30,69 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 350ms ease-in-out;
+}
+
+.contact-button:hover {
+    background-color: #D3573C;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
+/* MODAL */
+#contact-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 100;
 }
 
 .modal {
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #DB8876;
-    width: 50%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 35px;
-    margin: auto;
+    padding: 20px 30px 30px 30px;
+    margin: 5rem auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
-.modal header {
+.modal-header {
+    display: flex;
     justify-content: space-between;
     width: 100%;
+    margin: 0;
 }
 
-.modal header img {
+.modal-header img {
     cursor: pointer;
+    width: 23px;
 }
 
-.modal header h2 {
-    font-size: 64px;
+.modal-header img:hover {
+    color: #901C1C;
+}
+
+.modal-header h2 {
+    font-size: 34px;
     font-weight: normal;
     text-align: center;
+    margin: 0;
+}
+
+.modal h3 {
+    font-size: 34px;
+    font-weight: normal;
+    display: flex;
+    align-self: flex-start;
+    margin: 0 0 15px 0;
 }
 
 form {
@@ -57,7 +104,7 @@ form {
 
 form label {
     color: #312E2E;
-    font-size: 36px;
+    font-size: 24px;
 }
 
 form div {
@@ -70,7 +117,251 @@ form div {
 
 form input {
     width: 100%;
-    height: 68px;
-    border: none;
+    height: 35px;
+    border: 1px solid #312E2E;
     border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.input-error {
+    margin-top: -10px;
+    color: darkred;
+    font-weight: bold;
+}
+
+form input:focus {
+    outline-color: #901c1c;
+}
+
+form textarea {
+    width: 100%;
+    height: 80px;
+    border: 1px solid #312E2E;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+form textarea:focus {
+    outline-color: #901c1c;
+}
+
+form button {
+    margin: 13px auto 0 auto;
+}
+
+/* MEDIA */
+.medias-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 100px; 
+}
+
+.media-figure {
+    width: 30%;
+    min-width: 300px;
+    margin: 0;
+}
+
+.media-figure div {
+    margin-bottom: 5px;
+}
+
+.media-figure-img {
+    width: 100%;
+    height: 300px;
+    margin-bottom: -4px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: zoom-in;
+    transition: all 350ms ease-in-out;
+}
+
+.media-figure-img:hover {
+    transform: scale(1.02);
+}
+
+.media-figure-figcaption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #901C1C;
+    margin-bottom: 20px;
+}
+
+.media-figure-figcaption-title {
+    margin: 0;
+    font-size: 20px;
+}
+
+.media-figure-figcaption-btn {
+    border: none;
+    background-color: transparent;
+    color: #901C1C;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.media-figure-figcaption-btn-likes {
+    margin-right: 20px;
+}
+
+.icon-container {
+    position: relative;
+}
+
+.icon-container i {
+    position: absolute;
+}
+
+/* LIGHTBOX */
+.media-modal {
+    display: none;
+}
+
+.light-box {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: -5px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    z-index: 100;
+}
+
+.element-light-box {
+    position: absolute;
+    cursor: pointer;
+    font-size: 35px;
+    color: #901C1C;
+}
+
+.element-light-box-cross {
+    top: 6.27rem;
+    right: 10%;
+}
+
+.element-light-box-arrowLeft {
+    left: 10%;
+}
+
+.element-light-box-arrowRight {
+    right: 10%;
+}
+
+.element-light-box-title {
+    bottom: 2.3rem;
+    left: 15%;
+    font-size: 30px;
+}
+
+.light-box img, .light-box video {
+    width: 70%;
+    height: 600px;
+    object-fit: cover;
+    transition: none;
+}
+
+.light-box img:hover, .light-box video:hover {
+    transform: none;
+}
+
+/* SORT BUTTONS */
+.buttons-container {
+    position: relative;
+    color: #901C1C;
+    font-size: 20px;
+    margin: 30px 100px;
+    display: flex;
+}
+  
+.sort-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 0;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sort-button.selected {
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: -0.7rem;
+    left: 6rem;
+    z-index: 1;
+    background-color: #901C1C;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    width: 120px;
+}
+
+.dropdown-menu .sort-button {
+    display: none;
+    padding: 5px;
+}
+
+.dropdown-menu .sort-button.selected, .show .sort-button {
+    display: flex;
+}
+
+.show .separate-button {
+    display: block;
+}
+
+.dropdown-menu .sort-button:hover {
+    font-weight: bold;
+}
+
+.dropdown-menu .sort-button .fa-chevron-down {
+    display: none;
+}
+
+.dropdown-menu .sort-button.selected .fa-chevron-down {
+    display: block;
+    transition: all 350ms ease-in-out;
+}
+
+.show .sort-button.selected .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.separate-button {
+    display: none;
+    height: 1px;
+    background-color: white;
+    margin: 10px 0;
+}
+
+/* FOOTER */
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 5%;
+    background-color: #DB8876;
+    border-radius: 5px 5px 0 0;
+    padding: 15px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.footer-container p {
+    margin: 0;
+    font-size: 20px;
 }
