@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 function photographFooterFactory(photographPrice, mediaNbLikes) {
     function getPhotographFooterDOM() {
         const footerHTML = 

@@ -1,4 +1,5 @@
 // Créer un article contenant les informations de chaque photographe
+// eslint-disable-next-line
 function photographerFactory(photographerData) {
     const { id, name, portrait, city, country, tagline, price } = photographerData;
 

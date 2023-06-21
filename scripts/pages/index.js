@@ -11,17 +11,18 @@ async function displayPhotographers() {
     const photographersSection = document.querySelector(".photographer-section");
 
     photographers.forEach((photographer) => {
+        // eslint-disable-next-line
         const photographerModel = photographerFactory(photographer);
         const userCardDOM = photographerModel.getUserCardDOM();
         photographersSection.appendChild(userCardDOM);
     });
-};
+}
 
 // Afficher les photographes à l'ouverture de la page
 async function init() {
     const { photographers } = await getPhotographers();
     displayPhotographers(photographers);
-};
+}
 
 init();
     

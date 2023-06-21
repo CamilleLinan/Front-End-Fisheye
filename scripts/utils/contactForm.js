@@ -7,6 +7,7 @@ const main = document.getElementById('main-wrapper');
 const modal = document.getElementById("contact-modal");
 const closeIcon = document.querySelector('.cross-close-modal');
 
+// eslint-disable-next-line
 function displayModal() {
 	modal.style.display = "block";
     main.ariaHidden = true;

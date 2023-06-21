@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 function photographHeaderFactory(photographerData) {
     const { name, portrait, city, country, tagline } = photographerData;
 

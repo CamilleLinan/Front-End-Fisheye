@@ -60,6 +60,7 @@ const factory = (type, options) => {
 };
 
 // Créer une figure contenant un média de photographe
+// eslint-disable-next-line
 function createMediaFactory(mediasData, sortBy = 'popularity') {
     function sortMedia(a, b) {
         if (sortBy === 'popularity') {

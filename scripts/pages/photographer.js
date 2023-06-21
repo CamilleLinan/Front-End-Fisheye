@@ -15,15 +15,17 @@ async function getPhotographDetails() {
 async function displayPhotographDetails() {
     const photograph = await getPhotographDetails();
     const photographHeader = document.querySelector(".photograph-header");
-    
+
+    // eslint-disable-next-line
     const headerModel = photographHeaderFactory(photograph);
     const photographHeaderDOM = headerModel.getPhotographHeaderDOM();
     
     photographHeader.appendChild(photographHeaderDOM);
 
     const headerBtn = document.getElementById('header-contact-button');
+    // eslint-disable-next-line
     headerBtn.addEventListener('click', displayModal);
-};
+}
 
 // MAIN
 // MEDIA
@@ -54,6 +56,7 @@ async function displayPhotographMedias() {
     const mediaData = await getMediaDetails();
     const mediasContainer = document.querySelector('.medias-container');
 
+    // eslint-disable-next-line
     const mediaFactory = createMediaFactory(mediaData);
     const mediaDOM = Array.from(mediaFactory.getMediaDOM());
 
@@ -75,10 +78,12 @@ async function displayPhotographMedias() {
             const index = Array.from(mediaItems).findIndex((element) => element.id === mediaItem.id);
             
             media.addEventListener('click', (event) => {
+                // eslint-disable-next-line
                 launchLightBox(id, event, index)
             });
             media.addEventListener('keydown', (event) => {
                 if (event.key === 'Enter') {
+                    // eslint-disable-next-line
                     launchLightBox(id, event, index)
                 }
             });
@@ -95,14 +100,17 @@ async function displayPhotographMedias() {
             const modalElmtArrowRight = document.querySelector(`#media-modal-${id} > .element-light-box-arrowRight`);
             
             modalElmtCross.addEventListener('click', (event) => {
+                // eslint-disable-next-line
                 launchLightBox(id, event);
             });
 
             modalElmtArrowLeft.addEventListener('click', (event) => {
+                // eslint-disable-next-line
                 showPreviousMedia(event);
             });
 
             modalElmtArrowRight.addEventListener('click', (event) => {
+                // eslint-disable-next-line
                 showNextMedia(event);
             });
         });
@@ -119,6 +127,7 @@ async function displayPhotographMedias() {
 
     // Tri par popularité ou titre ou date
     function sortByPopularity() {
+        // eslint-disable-next-line
         const mediaFactory = createMediaFactory(mediaData, 'popularity');
         const mediaDOM = Array.from(mediaFactory.getMediaDOM());
 
@@ -127,6 +136,7 @@ async function displayPhotographMedias() {
     }
 
     function sortByTitle() {
+        // eslint-disable-next-line
         const mediaFactory = createMediaFactory(mediaData, 'title');
         const mediaDOM = Array.from(mediaFactory.getMediaDOM());
 
@@ -135,6 +145,7 @@ async function displayPhotographMedias() {
     }
 
     function sortByDate() {
+        // eslint-disable-next-line
         const mediaFactory = createMediaFactory(mediaData, 'date');
         const mediaDOM = Array.from(mediaFactory.getMediaDOM());
 
@@ -272,6 +283,7 @@ async function displayFooter() {
 
     const photographFooter = document.querySelector('.footer');
 
+    // eslint-disable-next-line
     const footerModel = photographFooterFactory(photographPrice, mediaNbLikes)
     const photographFooterDOM = footerModel.getPhotographFooterDOM();
 
@@ -285,6 +297,6 @@ async function init() {
     displayPhotographDetails(photograph);
     displayPhotographMedias(media);
     displayFooter(photograph, media);
-};
+}
 
 init();

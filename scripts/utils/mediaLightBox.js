@@ -12,6 +12,7 @@ const launchLightBox = (id, event, index) => {
         mediaModal.setAttribute('aria-hidden', 'false');
         mediaModal.setAttribute('tabindex', '0');
         mediaModal.focus();
+        // eslint-disable-next-line
         currentIndex = index;
     } else {
         mediaModal.classList.remove('light-box');
@@ -28,7 +29,9 @@ const showNextMedia = (event) => {
 
     const media = document.getElementsByClassName('media-figure');
     if (media.length > 0) {
+        // eslint-disable-next-line
         currentIndex = (currentIndex + 1) % media.length;
+        // eslint-disable-next-line
         showMediaAtIndex(currentIndex);
     }
 }
@@ -38,7 +41,9 @@ const showPreviousMedia = (event) => {
 
     const media = document.getElementsByClassName('media-figure');
     if (media.length > 0) {
+        // eslint-disable-next-line
         currentIndex = (currentIndex - 1 + media.length) % media.length;
+        // eslint-disable-next-line
         showMediaAtIndex(currentIndex);
     }
 }
